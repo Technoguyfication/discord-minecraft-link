@@ -43,3 +43,6 @@ vscode/*
 
 # Local History for Visual Studio Code
 .history/
+
+# Eclipse
+.settings/*
