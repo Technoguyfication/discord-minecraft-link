@@ -1,15 +1,20 @@
-name: ${name}
+main: com.technoguyfication.discordlink.DiscordLink
+name: DiscordLink
 version: ${version}
-description: ${description}
+api-version: "1.15"
+description: ${descrption}
+load: POSTWORLD
 author: ${author}
 website: ${url}
-
-main: ${mainClass}
-
+depend: [Vault]
 commands:
-    example:
-        description: An example command
-        permission: discordlink.example
-        usage: /discordlink
-
-permissions: {}
+  discordlink:
+    description: An example command
+    permission: discordlink.info
+    usage: /discordlink
+permissions:
+  discordlink.*:
+    description: DiscordLink
+    default: op
+    children:
+      test.info: true

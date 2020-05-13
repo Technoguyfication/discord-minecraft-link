@@ -4,10 +4,10 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-public class ExampleCommand implements CommandExecutor {
+public class DiscordLinkCommand implements CommandExecutor {
     DiscordLink plugin;
 
-    public ExampleCommand(DiscordLink plugin) {
+    public DiscordLinkCommand(DiscordLink plugin) {
         this.plugin = plugin;
     }
 
@@ -15,11 +15,11 @@ public class ExampleCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         String cmdName = cmd.getName().toLowerCase();
 
-        if (!cmdName.equals("example")) {
+        if (!cmdName.equals("discordlink")) {
             return false;
         }
 
-        sender.sendMessage("Successfully used example command!");
+        sender.sendMessage(String.format("DiscordLink version: %s\nVault version: %s", plugin.getDescription().getVersion(), plugin.getVault().getDescription().getVersion()));
 
         return true;
     }
